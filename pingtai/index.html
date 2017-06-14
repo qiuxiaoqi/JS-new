@@ -1,0 +1,134 @@
+<!doctype html>
+<script src="code/chapter/15.js"></script>
+<script src="code/game_levels.js"></script>
+<script src="code/chapter/16.js"></script>
+<head>
+  <meta charset="UTF-8">
+  <title>马里奥</title>
+</head>
+<script>
+    window.onload=function(){      
+      getMyTime1();  
+    }
+    function p(n){
+      return n<10?'0'+n:n;
+    }
+    function getMyTime1(){
+      var myDate=new Date();
+      var year=myDate.getFullYear();
+      var month=myDate.getMonth()+1;
+      var day=myDate.getDate();
+      var week=myDate.getDay();
+      var array=['星期日','星期一','星期二','星期三','星期四','星期五','星期六',];
+      var hour=myDate.getHours();
+      var minute=myDate.getMinutes();
+      var second=myDate.getSeconds();
+      document.getElementById('time1').innerHTML=year+'年'+month+'月'+day+'日'+' '+array[week]+' '+p(hour)+':'+p(minute)+':'+p(second);
+      setTimeout('getMyTime1()',500);
+    }
+  </script>
+  
+<body>
+<div class="text">
+	<SCRIPT LANGUAGE="JavaScript"> 
+		document.write("用户:");
+        document.write(decodeURIComponent(location.search.substr(4))); 
+    </SCRIPT> 
+	<button id="zhuxiao"><a href="log_in.html">注销</a></button>
+    <p>当前时间：<span id="time1"></span></p>
+  </div>
+  <div id="content" style="float:right">
+    <table id="table1">
+        <thead>
+            <tr>
+                <th></th>
+                <th scope="col" >顺序</th>
+                <th scope="col" >用户</th>
+                <th scope="col" >总金币数</th>
+				<th scope="col" >时间</th>
+            </tr>
+        </thead>
+        <tbody id= "table-body">
+            <tr>
+                <th scope="row">第 1 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">第 2 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">第 3 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">第 4 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">第 5 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <th scope="row">第 6 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+			 <tr>
+                <th scope="row">第 7 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+			 <tr>
+                <th scope="row">第 8 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+			 <tr>
+                <th scope="row">第 9 次</th>
+               <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+			 <tr>
+                <th scope="row">第 10 次</th>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+  <div>
+  </div>
+  <script>
+  //chayong();
+ //    window.onload=function(){      
+  //    chayong();  
+  //  }
+  runGame(GAME_LEVELS, CanvasDisplay,decodeURIComponent(location.search.substr(4)));
+  </script>
+</body>

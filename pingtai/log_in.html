@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>login</title>
+</head>
+<body>
+  <div>
+    <label for="user">用户名</label><input type="text" id="user">
+  </div>
+  <div>
+    <label for="password">密   码</label><input type="password" id="password">
+  </div>
+  <div>
+    <button id="login">登录</button>
+    <button id="register"><a href="sign_up.html">注册</a></button>
+  </div>
+</body>
+<script src="./jquery.min.js"></script>
+<script>
+
+  $(function () {
+  var a;
+    $("#login").click(function () {
+      if ($("#user").val().length == 0){
+        return alert("请输入用户!");
+      }
+      if ($("#password").val().length == 0){
+        return alert("请输入密码!");
+      }
+
+      $.ajax({
+        url:"http://localhost:3000/login",
+        type:"POST",
+        data:{
+          username:$("#user").val(),
+          password:$("#password").val()
+        },
+        success:function (res) {
+			if(res=="登录成功!"){
+				alert(res);
+				window.location.href="index.html?id="+document.getElementById('user').value;}
+			else
+				alert(res);
+        },
+        error:function (err) {
+			a=0
+          console.log(err);
+        }
+      })
+
+    })
+  });
+</script>
+<script>
+<a if(a==1) href="index.html"></a></script>
+</html>
